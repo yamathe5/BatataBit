@@ -470,10 +470,22 @@ main {
 
 }
 
+/* Slider de tarjetas */
+.plans-container--slider {
+    display: flex;
+
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
 
 /* Disenamos la tarjeta */
 .plans-container--card {
     position: relative;
+    /* Para que el scroll funcione */
+    scroll-snap-align: center;
     width: 70%;
     min-width: 230px;
     max-width: 320px;
