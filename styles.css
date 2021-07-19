@@ -469,7 +469,7 @@ main {
 
 
 }
-
+/* ------------------------------------------------------------------------------------------------------------ */
 /* Slider de tarjetas */
 .plans-container--slider {
     display: flex;
@@ -477,22 +477,33 @@ main {
     height: 316px;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
+    /* Hace que al estar cerca de un elemento me acerca a el */
     scroll-snap-type: x proximity;
-    gap: 50px;
+    /* overflow: hidden; */
+    /* gap: 50px; */
+    /* No todos los navegadores soportan gap asi que usaremos otro truco */
 }
 
 
 /* Disenamos la tarjeta */
 .plans-container--card {
     position: relative;
+
     /* Para que el scroll funcione */
     scroll-snap-align: center;
+
+    /* ------------------------------------------------------------------------------------------------------ */
+    /* Hicimos mas pequeno el margin para que se vea como el diseno y disminui y min width y mmax width */
     width: 70%;
-    min-width: 230px;
-    max-width: 320px;
+    min-width: 190px;
+    max-width: 300px;
     height: 250px;
     /* Clase 24 al final */
-    margin: 50px auto 0;
+    /* CAmbiamos el margin auto pot 30px */
+    margin: 50px 5px 0;
+
+    /* Margin para reemplazar el gap */
+    /* --------------------- */
     padding: 0 15px;
     background-color: var(--just-white);
     border-radius: 15px;
@@ -565,4 +576,37 @@ main {
     background-image: url("/assets/icons/arrow-right\ 1.svg");
     /* Propiedad interesante */
     vertical-align: text-bottom;
+}
+/* ------------------------- Footer */
+
+
+footer {
+    display: flex;
+    /* Yo puse space around el profe puso un width para que ambos elementos ocupen solo el 50 % y este todo centrado */
+    /* justify-content: space-around; */
+    width: 100%;
+    /* Aqui el profe puso heigh definido yo puse auto */
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+    
+}
+footer section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .left ul {
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    
+}
+.left li {
+    margin: 10px 0;
+}
+.left li a {
+    text-decoration: none;
+    color: var(--just-white);
 }
